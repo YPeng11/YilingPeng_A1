@@ -4,7 +4,7 @@ import java.util.List;
 
 //继承基类extends
 public class GeneralPractitioner extends HealthProfessional {
-	private List<String> availableSlots;; // 声明 新 字段，可预约的时间段
+	private List<String> availableSlots; // 声明 新 字段，可预约的时间段
 	private String doctorType; // 医生类型
 
 	// 构造函数
@@ -33,12 +33,16 @@ public class GeneralPractitioner extends HealthProfessional {
 		this.doctorType = doctorType;
 	}
 
+	// 检查时间段是否有效
+	public boolean isTimeSlotAvailable(String timeSlot) {
+		return availableSlots.contains(timeSlot);
+	}
+
 	// 方法重写
 	@Override
 	public void printDetails() {
-		// 输出内容修改
 		super.printDetails();
-		System.out.println("Price: " + availableSlots);
-		System.out.println("Place: " + doctorType);
+		System.out.println("Available Slots: " + availableSlots);
+		System.out.println("Doctor Type: " + doctorType);
 	}
 }

@@ -30,4 +30,9 @@ public class HealthProfessional {
         System.out.println("Specialization: " + specialization);
         System.out.println("Place: " + place);
     }
+
+    // 添加 getName 方法
+    public String getName() {
+        return HealthProfessional_name;
+    }
 }

@@ -11,7 +11,7 @@ public class Appointment {
         this.patientName = "Unknown";
         this.mobilePhone = "Unknown";
         this.preferredTimeSlot = "Not Specified";
-        this.doctor = null; // 默认没有选择医生
+        this.doctor = new HealthProfessional(); // 默认没有选择医生
     }
 
     // 第二个构造函数，用于初始化所有实例变量
@@ -57,7 +57,16 @@ public class Appointment {
     }
 
     public void setPreferredTimeSlot(String preferredTimeSlot) {
-        this.preferredTimeSlot = preferredTimeSlot;
+        if (doctor instanceof GeneralPractitioner) {
+            GeneralPractitioner gp = (GeneralPractitioner) doctor;
+            if (gp.isTimeSlotAvailable(preferredTimeSlot)) {
+                this.preferredTimeSlot = preferredTimeSlot;
+            } else {
+                throw new IllegalArgumentException("The selected time slot is not available for this doctor.");
+            }
+        } else {
+            this.preferredTimeSlot = preferredTimeSlot; // 如果医生类型不需要检查，则直接设置
+        }
     }
 
     public HealthProfessional getDoctor() {
