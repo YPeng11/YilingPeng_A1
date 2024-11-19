@@ -30,9 +30,9 @@ public class AssignmentOne {
 
 		System.out.println("------------------------------");
 
-		// 第 5 部分 – 约会集合
+		// Part 5 – Collection of appointments
 
-		System.out.println("// 第 5 部分 – 约会集合");
+		System.out.println("// Part 5 – Collection of appointments  ");
 
 		createAppointment("Salad", "2736282649", "09:00", Doctor1);
 		createAppointment("Ding", "37354960441", "11:00", Doctor2);
