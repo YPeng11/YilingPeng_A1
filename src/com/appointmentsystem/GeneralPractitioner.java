@@ -9,9 +9,9 @@ public class GeneralPractitioner extends HealthProfessional {
 
 	// 构造函数
 	public GeneralPractitioner(int HealthProfessional_ID, String HealthProfessional_name, double price,
-			String specialization,
+			String PrimaryType,
 			String place, List<String> availableSlots, String doctorType) {
-		super(HealthProfessional_ID, HealthProfessional_name, price, specialization, place); // 调用基类构造函数
+		super(HealthProfessional_ID, HealthProfessional_name, price, PrimaryType, place); // 调用基类构造函数
 		this.availableSlots = availableSlots;
 		this.doctorType = doctorType;
 	}
@@ -43,7 +43,7 @@ public class GeneralPractitioner extends HealthProfessional {
 	public void printDetails() {
 		// 输出内容修改
 		super.printDetails();
-		System.out.println("Price: " + availableSlots);
-		System.out.println("Place: " + doctorType);
+		System.out.println("AvailableSlots: " + availableSlots);
+		System.out.println("DoctorType: " + doctorType);
 	}
 }

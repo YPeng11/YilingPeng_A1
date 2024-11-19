@@ -8,7 +8,7 @@ public class AssignmentOne {
 
     public static void main(String[] args) {
         // Part 3 – Using classes and objects
-        System.out.println("// Using classes and objects");
+        System.out.println("// Part 3 - Using classes and objects");
 
         GeneralPractitioner Doctor1 = new GeneralPractitioner(1, "Dr. Jane", 50.50, "General Medicine", "3 floor",
                 List.of("09:00", "10:30", "14:00", "15:30"), "主任");
