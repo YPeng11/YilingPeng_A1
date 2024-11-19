@@ -35,4 +35,5 @@ public class HealthProfessional {
     public String getName() {
         return HealthProfessional_name;
     }
+
 }

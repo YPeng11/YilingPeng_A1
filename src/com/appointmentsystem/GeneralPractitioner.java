@@ -21,6 +21,11 @@ public class GeneralPractitioner extends HealthProfessional {
 		return availableSlots;
 	}
 
+	// 检查时间段是否有效
+	public boolean isTimeSlotAvailable(String timeSlot) {
+		return availableSlots.contains(timeSlot);
+	}
+
 	public void setAvailableSlots(List<String> availableSlots) {
 		this.availableSlots = availableSlots;
 	}
@@ -33,16 +38,12 @@ public class GeneralPractitioner extends HealthProfessional {
 		this.doctorType = doctorType;
 	}
 
-	// 检查时间段是否有效
-	public boolean isTimeSlotAvailable(String timeSlot) {
-		return availableSlots.contains(timeSlot);
-	}
-
 	// 方法重写
 	@Override
 	public void printDetails() {
+		// 输出内容修改
 		super.printDetails();
-		System.out.println("Available Slots: " + availableSlots);
-		System.out.println("Doctor Type: " + doctorType);
+		System.out.println("Price: " + availableSlots);
+		System.out.println("Place: " + doctorType);
 	}
 }

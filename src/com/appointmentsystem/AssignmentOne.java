@@ -46,14 +46,7 @@ public class AssignmentOne {
 		cancelBooking("2736282649");
 
 		printExistingAppointments();
-		// 测试错误时间段
-		System.out.println("// 测试时间段错误");
-		Appointment appointment = new Appointment("John Doe", "1234567890", "09:00", Doctor1);
-		try {
-			appointment.setPreferredTimeSlot("12:00"); // doctor1 不提供此时间段
-		} catch (IllegalArgumentException e) {
-			System.out.println("Error: " + e.getMessage());
-		}
+
 	}
 
 	// 创建新约会的方法
@@ -63,14 +56,22 @@ public class AssignmentOne {
 			System.out.println("Error: Missing required information. Cannot create appointment.");
 			return;
 		}
-		try {
-			Appointment newAppointment = new Appointment(patientName, mobilePhone, preferredTimeSlot, doctor);
-			appointments.add(newAppointment);
-			System.out.println("Appointment created successfully for " + patientName + " with " + doctor.getName() +
-					" at " + preferredTimeSlot);
-		} catch (IllegalArgumentException e) {
-			System.out.println("Error: " + e.getMessage());
+
+		// 如果医生是 GeneralPractitioner，则验证时间段
+		if (doctor instanceof GeneralPractitioner) {
+			GeneralPractitioner gp = (GeneralPractitioner) doctor;
+			if (!gp.isTimeSlotAvailable(preferredTimeSlot)) {
+				System.out.println("Error: The selected time slot " + preferredTimeSlot + " is not available for "
+						+ gp.getName());
+				return;
+			}
 		}
+
+		// 创建预约
+		Appointment newAppointment = new Appointment(patientName, mobilePhone, preferredTimeSlot, doctor);
+		appointments.add(newAppointment);
+		System.out.println("Appointment created successfully for " + patientName + " with " + doctor.getName() +
+				" at " + preferredTimeSlot);
 	}
 
 	// 打印现有约会的方法
