@@ -8,15 +8,16 @@ public class AssignmentOne {
 
 	public static void main(String[] args) {
 		// Part 3 – Using classes and objects
-		System.out.println("// 第 3 部分 – 使用类和对象");
+		System.out.println("// Using classes and objects");
 
 		GeneralPractitioner Doctor1 = new GeneralPractitioner(1, "Dr. Jane", 50.50, "General Medicine", "3 floor",
 				List.of("09:00", "10:30", "14:00", "15:30"), "主任");
 
-		GeneralPractitioner Doctor2 = new GeneralPractitioner(2, "Dr. Peng", 35.50, "Family Health", "外科部门502",
+		GeneralPractitioner Doctor2 = new GeneralPractitioner(2, "Dr. Peng", 35.50, "External health",
+				"Department of Surgery 502",
 				List.of("08:00", "09:30", "13:00", "16:00"), "副主任");
 
-		GeneralPractitioner Doctor3 = new GeneralPractitioner(3, "Dr. Aura", 67.99, "Community Health", "主楼304",
+		GeneralPractitioner Doctor3 = new GeneralPractitioner(3, "Dr. Aura", 67.99, "Gastrointestinal health", "主楼304",
 				List.of("10:00", "11:00", "14:00", "17:00"), "主任");
 
 		Pediatrician pediatrician1 = new Pediatrician(4, "Dr. Blue", 56.77, "Neonatology", "儿科505", "2-5");
