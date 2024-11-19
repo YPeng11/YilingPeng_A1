@@ -5,9 +5,9 @@ public class Pediatrician extends HealthProfessional {
 	private String ageGroup; // 声明 新 字段
 
 	// 构造函数
-	public Pediatrician(int HealthProfessional_ID, String HealthProfessional_name, double price, String PrimaryType,
+	public Pediatrician(int HealthProfessional_ID, String HealthProfessional_name, double price, String specialization,
 			String place, String ageGroup) {
-		super(HealthProfessional_ID, HealthProfessional_name, price, PrimaryType, place); // 调用基类构造函数
+		super(HealthProfessional_ID, HealthProfessional_name, price, specialization, place); // 调用基类构造函数
 		this.ageGroup = ageGroup;
 	}
 
